@@ -21,7 +21,7 @@ class UrlServiceProvider extends ServiceProvider
     {
         $wechat = $this->royalcms['wechat'];
         
-        $wechat->bindShared('url', function($wechat)
+        $wechat->singleton('url', function($wechat)
         {
             return new Url($wechat['access_token']);
         });
